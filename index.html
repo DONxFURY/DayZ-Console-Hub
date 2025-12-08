@@ -3,84 +3,188 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Z-WORLD NETWORK — Home</title>
-<link rel="stylesheet" href="assets/css/style.css">
+<title>DayZ Console Hub</title>
+<link href="assets/css/styles.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar">
-  <div class="nav-left">
-    <img src="https://i.imgur.com/Gsj3TQp.png" onerror="this.src='assets/img/main-logo.png'" class="logo-small" alt="Z-WORLD">
-  </div>
-  <div class="nav-links">
-    <a href="index.html" class="active">Home</a>
-    <a href="znation.html">ZNation</a>
-    <a href="zomin.html">Zomin</a>
-    <a href="chernarus.html">Chernarus</a>
-  </div>
-</nav>
-
-<header class="hero">
-  <img src="https://i.imgur.com/Gsj3TQp.png" onerror="this.src='assets/img/main-logo.png'" class="main-logo" alt="Z-WORLD Main">
-  <p class="lead">We are a two-man team with one goal: make DayZ Console great again. We build tuned servers, balanced systems, and community-first events — tailored for serious survivors.</p>
-
-  <div class="card">
-    <h2>Who we are</h2>
-    <p>Two creators. Years in the community. We combine technical know-how with an obsession for great gameplay. Expect clean server rules, regular updates, and fast support.</p>
+<header>
+  <div class="header-inner container">
+    <div class="logo"><i class="fas fa-skull-crossbones"></i><span>DAYZ CONSOLE HUB</span></div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="#community">Community</a>
+    </nav>
   </div>
 </header>
 
-<section class="showcase-wrap">
-  <div class="slider slider--home">
-    <div class="slider-track">
-      <div class="slide">
-        <img src="assets/img/showcase1.png" alt="show1">
-        <div class="slide-overlay">ZNATION — PvP hotspots, boosted loot, action.</div>
-      </div>
-      <div class="slide">
-        <img src="assets/img/showcase2.png" alt="show2">
-        <div class="slide-overlay">ZOMIN — Harsh survival, mystery, and events.</div>
-      </div>
-      <div class="slide">
-        <img src="assets/img/showcase3.png" alt="show3">
-        <div class="slide-overlay">More servers coming — Chernarus expansion soon.</div>
-      </div>
+<main class="container">
+  <section class="hero">
+    <h1>Find the perfect DayZ server</h1>
+    <p>Discover PlayStation and Xbox servers — quick filters, clean details, and join via Discord.</p>
+
+    <div class="tabs" style="margin-top:10px">
+      <div class="tab active" data-platform="all">All Platforms</div>
+      <div class="tab ps" data-platform="ps">PlayStation</div>
+      <div class="tab xbox" data-platform="xbox">Xbox</div>
+    </div>
+  </section>
+
+  <section class="servers">
+    <div class="filters">
+      <select id="platform-filter" class="filter" style="display:none">
+        <option value="all">All Platforms</option>
+        <option value="ps">PlayStation</option>
+        <option value="xbox">Xbox</option>
+      </select>
+      <select id="type-filter" class="filter">
+        <option value="all">All Types</option>
+        <option value="pvp">PvP</option>
+        <option value="pve">PvE</option>
+        <option value="rp">Roleplay</option>
+        <option value="vanilla">Vanilla</option>
+      </select>
+      <select id="map-filter" class="filter">
+        <option value="all">All Maps</option>
+        <option value="chernarus">Chernarus</option>
+        <option value="livonia">Livonia</option>
+        <option value="sakhal">Sakhal</option>
+      </select>
     </div>
 
-    <div class="arrow left" aria-label="Previous">&#9664;</div>
-    <div class="arrow right" aria-label="Next">&#9654;</div>
-  </div>
+    <div class="grid">
+        <!-- Server cards -->
+        <div class="card" data-platform="ps" data-type="pvp" data-map="chernarus" data-wipe="Monthly" data-slots="16 Slots" data-discord="https://discord.gg/jkdfpazMbU" data-img="assets/img/HAVOC PvE.jpg">
+            <div class="head">
+                <div>
+                    <div class="server-name" style="font-weight:800">HAVOC | PvE</div>
+                    <div class="meta"><span class="badge ps">PS4/PS5</span> <small style="color:var(--muted);margin-left:8px"> 16 Slots </small></div>
+                </div>
+                <img class="small-img" src="assets/img/HAVOC PvE.jpg" alt="">
+            </div>
+            <div class="desc">High-action PvE server with increased loot and base building. Active admins and weekly events.</div>
+            <div class="full-desc" style="display:none">High-action PvE server with increased loot and base building. Active admins and events. and a friendly community.</div>
+            <div class="actions">
+                <button class="btn ghost details">Details</button>
+                <button class="btn primary" onclick="window.open('https://discord.gg/jkdfpazMbU','_blank')">Join Server</button>
+            </div>
+        </div>
 
-  <div class="grid" style="margin-top:20px;">
-    <div class="server-card">
-      <h3>ZNATION</h3>
-      <p>Balanced PvP server with 2.5x loot, territory wars, and frequent events.</p>
-      <div class="actions">
-        <a class="btn primary" href="znation.html">View</a>
-        <a class="btn ghost" href="https://discord.gg/9Y6M2cDYbv">Discord</a>
+        <div class="card" data-platform="xbox" data-type="rp" data-map="livonia" data-wipe="Bi-Weekly" data-slots="28/50" data-discord="https://discord.gg/example2" data-img="assets/img/xbox-placeholder.svg">
+            <div class="head">
+                <div>
+                    <div class="server-name" style="font-weight:800">The Last Hope RP</div>
+                    <div class="meta"><span class="badge xbox">Xbox Series X</span> <small style="color:var(--muted);margin-left:8px">28/50 players</small></div>
+                </div>
+                <img class="small-img" src="assets/img/xbox-placeholder.svg" alt="">
+            </div>
+            <div class="desc">Immersive roleplay experience with custom factions, economy, and storylines. Whitelist required.</div>
+            <div class="full-desc" style="display:none">Immersive roleplay experience with custom factions, economy, and storylines. Whitelist required. Detailed staff-run campaigns and stable uptime.</div>
+            <div class="actions">
+                <button class="btn ghost details">Details</button>
+                <button class="btn primary" onclick="window.open('https://discord.gg/example2','_blank')">Join Server</button>
+            </div>
+        </div>
+
+        <div class="card" data-platform="ps" data-type="pve" data-map="chernarus" data-wipe="Monthly" data-slots="35/50" data-discord="https://discord.gg/example3" data-img="assets/img/ps-placeholder.svg">
+            <div class="head">
+                <div>
+                    <div class="server-name" style="font-weight:800">Survivor's Haven</div>
+                    <div class="meta"><span class="badge ps">PS4/PS5</span> <small style="color:var(--muted);margin-left:8px">35/50 players</small></div>
+                </div>
+                <img class="small-img" src="assets/img/ps-placeholder.svg" alt="">
+            </div>
+            <div class="desc">Friendly PvE community with increased zombies and wildlife. Build, explore, and survive together.</div>
+            <div class="full-desc" style="display:none">Friendly PvE community with increased zombies and wildlife. Build, explore, and survive together. Regular community builds and seasonal events.</div>
+            <div class="actions">
+                <button class="btn ghost details">Details</button>
+                <button class="btn primary" onclick="window.open('https://discord.gg/example3','_blank')">Join Server</button>
+            </div>
+        </div>
+
+        <div class="card" data-platform="xbox" data-type="vanilla" data-map="livonia" data-wipe="Quarterly" data-slots="18/60" data-discord="https://discord.gg/example4" data-img="assets/img/xbox-placeholder.svg">
+            <div class="head">
+                <div>
+                    <div class="server-name" style="font-weight:800">Pure DayZ Experience</div>
+                    <div class="meta"><span class="badge xbox">Xbox One/Series</span> <small style="color:var(--muted);margin-left:8px">18/60 players</small></div>
+                </div>
+                <img class="small-img" src="assets/img/xbox-placeholder.svg" alt="">
+            </div>
+            <div class="desc">True to the original DayZ experience. No mods, no increased loot - just pure survival.</div>
+            <div class="full-desc" style="display:none">True to the original DayZ experience. No mods, no increased loot - just pure survival. Suitable for players seeking classic gameplay.</div>
+            <div class="actions">
+                <button class="btn ghost details">Details</button>
+                <button class="btn primary" onclick="window.open('https://discord.gg/example4','_blank')">Join Server</button>
+            </div>
+        </div>
+        <div class="card" data-platform="ps" data-type="pvp" data-map="livonia" data-wipe="Monthly" data-slots="12" data-discord="https://discord.gg/example1" data-img="assets/img/LOGO.png">
+            <div class="head">
+                <div>
+                    <div class="server-name" style="font-weight:800">Zomin | PvP</div>
+                    <div class="meta"><span class="badge ps">PS4/PS5</span> <small style="color:var(--muted);margin-left:8px">12 Slots</small></div>
+                </div>
+                <img class="small-img" src="assets/img/LOGO.png" alt="">
+            </div>
+            <div class="desc">High-action PvP server with increased loot and base building. Active admins and weekly events.</div>
+            <div class="full-desc" style="display:none">High-action PvP server with increased loot and base building. Active admins and weekly events. Events every Saturday, active moderator team, and a friendly community for raids and groups.</div>
+            <div class="actions">
+                <button class="btn ghost details">Details</button>
+                <button class="btn primary" onclick="window.open('https://discord.gg/example1','_blank')">Join Server</button>
+            </div>
+        </div>
+        <div class="card" data-platform="ps" data-type="pvp" data-map="livonia" data-wipe="monthly" data-slots="24" data-discord="https://discord.gg/aW9MsyYh" data-img="assets\img\The Rise Of The Dead.jpg">
+            <div class="head">
+                <div>
+                    <div class="server-name" style="font-weight:800">The Rise Of The Dead</div>
+                    <div class="meta"><span class="badge ps">PS4/PS5</span> <small style="color:var(--muted);margin-left:8px">24 Slots</small></div>
+                </div>
+                <img class="small-img" src="assets\img\The Rise Of The Dead.jpg" alt="">
+            </div>
+            <div class="desc">The Rise Of The Dead</div>
+            <div class="full-desc" style="display:none">Hello all if your looking for a new start come join us on the server Search The Rise 0f The Dead 
+We are a new server but have started getting solo an factions an duos join the server we do regular events military airfield is modded for pvp there free loot there 3 locations trader at green mountain 
+Free building supplies an car supplies 
+Bunkers 1v1 stadium Locked containers and more 
+Uk US </div>
+            <div class="actions">
+                <button class="btn ghost details">Details</button>
+                <button class="btn primary" onclick="window.open('https://discord.gg/aW9MsyYh','_blank')">Join Server</button>
+            </div>
+        </div>
+
+    </div>
+  </section>
+
+  <section id="community" style="padding:30px 0">
+    <h3 style="text-align:center">Join Our Discord</h3>
+    <p style="text-align:center;color:var(--muted)">Connect with players, get support, and find squads.</p>
+  </section>
+
+  <footer class="footer">
+    &copy; DayZ Console Hub
+  </footer>
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal" role="dialog" aria-hidden="true">
+  <div class="modal-card">
+    <img id="modal-img" src="assets/img/group image 2.jpeg" alt="">
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="modal-title">Server Title</h3>
+        <button id="modal-close" class="close">✕</button>
+      </div>
+      <p id="modal-desc" class="info" style="margin-top:6px">Full server description</p>
+      <div id="modal-meta" style="margin-top:10px;color:var(--muted)"></div>
+      <div style="margin-top:14px;display:flex;gap:8px">
+        <button id="modal-join" class="btn primary">Join Server</button>
+        <button id="modal-copy" class="btn ghost" onclick="navigator.clipboard && navigator.clipboard.writeText(window.location.href)">Copy Link</button>
       </div>
     </div>
-
-    <div class="server-card">
-      <h3>ZOMIN</h3>
-      <p>Dark survival focused server with custom story events and low loot.</p>
-      <div class="actions">
-        <a class="btn primary" href="zomin.html">View</a>
-        <a class="btn ghost" href="https://discord.gg/tvkXbbGCzG">Discord</a>
-      </div>
-    </div>
   </div>
-</section>
+</div>
 
-<section class="section">
-  <h2>Why choose us?</h2>
-  <div class="detail-grid">
-    <div class="card"><h3>Community-first</h3><p>We prioritize a healthy playerbase and fair play.</p></div>
-    <div class="card"><h3>Regular updates</h3><p>Weekly tweaks, events, and active moderation.</p></div>
-    <div class="card"><h3>Performance</h3><p>Optimized settings for smooth console play.</p></div>
-  </div>
-</section>
-
-<footer class="footer">© 2025 Z-WORLD NETWORK — Built by Survivors</footer>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
